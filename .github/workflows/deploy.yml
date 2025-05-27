@@ -37,7 +37,7 @@ jobs:
 
       - name: Build with Gradle
         run: |
-          cd ~
+          cd toy
           chmod +x ./gradlew
           ./gradlew build -x test
 
