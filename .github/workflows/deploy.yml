@@ -33,8 +33,8 @@ jobs:
         run: |
           mkdir -p ./deploy
           cat <<EOF > ./deploy/application.yml
-${{ secrets.APPLICATION_YML }}
-EOF
+          ${{ secrets.APPLICATION_YML }}
+          EOF
 
       - name: Build with Gradle
         run: |
