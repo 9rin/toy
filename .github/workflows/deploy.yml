@@ -38,7 +38,7 @@ jobs:
       - name: Build with Gradle
         run: |
           cd ../../..
-          chmod +x ./gradlew
+          chmod +x gradlew
           ./gradlew build -x test
 
       - name: Configure AWS credentials
