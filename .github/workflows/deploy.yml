@@ -40,8 +40,8 @@ jobs:
 
           # ✅ application.yml 생성
           cat <<EOF > deploy/application.yml
-${{ secrets.APPLICATION_YML }}
-EOF
+          ${{ secrets.APPLICATION_YML }}
+          EOF
 
           # ✅ 필요한 파일 복사
           cp appspec.yml deploy/
