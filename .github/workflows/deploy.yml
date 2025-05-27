@@ -34,19 +34,21 @@ jobs:
           chmod +x ./gradlew
           ./gradlew build -x test
 
-      - name: Prepare deploy folder and application.yml
+      - name: Prepare deploy folder
         run: |
           mkdir -p deploy/scripts
-          
-          # 👉 필수: application.yml을 deploy/에 생성
-          cat <<EOF > deploy/application.yml
-          ${{ secrets.APPLICATION_YML }}
-          EOF
 
-          # 👉 필요한 파일들 복사
+          # ✅ application.yml 생성
+          cat <<EOF > deploy/application.yml
+${{ secrets.APPLICATION_YML }}
+EOF
+
+          # ✅ 필요한 파일 복사
           cp appspec.yml deploy/
           cp -r scripts/* deploy/scripts/
-          cp build/libs/*.jar deploy/
+
+          # ✅ JAR 파일 복사 (이름 고정)
+          cp build/libs/*.jar deploy/demo-0.0.1-SNAPSHOT.jar
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
