@@ -14,7 +14,7 @@ echo "$TIME_NOW > JAR 복사 시작: $JAR_SOURCE -> $JAR_TARGET" >> $DEPLOY_LOG
 cp $JAR_SOURCE $JAR_TARGET
 
 echo "$TIME_NOW > JAR 실행 시작" >> $DEPLOY_LOG
-nohup java -jar $JAR_TARGET > $APP_LOG 2> $ERROR_LOG &
+nohup java -jar -Dspring.config.location=$PROJECT_ROOT/application.yml $JAR_TARGET > $APP_LOG 2> $ERROR_LOG &
 
 CURRENT_PID=$(pgrep -f $JAR_TARGET)
 echo "$TIME_NOW > 실행된 프로세스의 아이디는 $CURRENT_PID 입니다." >> $DEPLOY_LOG
