@@ -1,4 +1,5 @@
-#!/usr/bin/env bashPROJECT_ROOT="/home/ubuntu/toytweet"
+#!/usr/bin/env bash
+PROJECT_ROOT="/home/ubuntu/toytweet"
 JAR_FILE="$PROJECT_ROOT/demo-0.0.1-SNAPSHOT.jar"
 
 APP_LOG="$PROJECT_ROOT/application.log"
