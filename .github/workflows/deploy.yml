@@ -40,7 +40,7 @@ jobs:
           
           # 👉 필수: application.yml을 deploy/에 생성
           cat <<EOF > deploy/application.yml
-${{ secrets.APPLICATION_YML }}
+          ${{ secrets.APPLICATION_YML }}
 EOF
 
           # 👉 필요한 파일들 복사
