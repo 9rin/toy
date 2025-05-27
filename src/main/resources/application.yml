@@ -5,7 +5,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/toy?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
     username: root
-    password: Asmryuyu1@
+    password: Asmrtptp1@
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -22,3 +22,6 @@ spring:
       org.springframework.web: DEBUG
       org.hibernate.SQL: DEBUG
       org.hibernate.type.descriptor.sql: TRACE
+
+
+
