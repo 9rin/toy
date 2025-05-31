@@ -3,8 +3,11 @@ package toy.user;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+@CrossOrigin(origins = {
+        "https://twitter-clone-tawny-phi.vercel.app", // 배포 기본 도메인
+        "http://localhost:5173" // 개발용
+})
 
-@CrossOrigin(origins = "https://twitter-clone-tawny-phi.vercel.app")
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
