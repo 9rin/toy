@@ -13,11 +13,14 @@ import toy.tweet.service.TweetService;
 import toy.user.UserResponseDto;
 
 import java.util.List;
-@CrossOrigin(origins = {
-        "https://twitter-clone-tawny-phi.vercel.app", // 배포 기본 도메인
-        "http://localhost:5173" // 개발용
-})
-
+@CrossOrigin(
+        origins = {
+                "https://twitter-clone-tawny-phi.vercel.app",
+                "http://localhost:5173"
+        },
+        allowedHeaders = "*",
+        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.OPTIONS}
+)
 @RestController
 @RequestMapping("/tweets")
 @RequiredArgsConstructor
