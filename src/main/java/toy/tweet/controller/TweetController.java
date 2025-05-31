@@ -14,6 +14,7 @@ import toy.user.UserResponseDto;
 
 import java.util.List;
 
+@CrossOrigin(origins = "https://twitter-clone-tawny-phi.vercel.app")
 @RestController
 @RequestMapping("/tweets")
 @RequiredArgsConstructor
