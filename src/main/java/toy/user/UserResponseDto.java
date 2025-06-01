@@ -5,6 +5,9 @@ package toy.user;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.time.LocalDateTime;
+
+
 @Builder
 @Getter
 public class UserResponseDto {
@@ -14,6 +17,8 @@ public class UserResponseDto {
     private String handle;
     private String email;
     private String explanation;
+    private LocalDateTime createdAt;
+
 
     // Build
     public static UserResponseDto from(User user){
@@ -22,6 +27,7 @@ public class UserResponseDto {
                 .handle(user.getHandle())
                 .email(user.getEmail())
                 .explanation(user.getExplanation())
+                .createdAt(user.getCreatedAt())
                 .build();
     }
 }

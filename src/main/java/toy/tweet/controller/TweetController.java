@@ -9,18 +9,22 @@ import toy.tweet.dto.response.TweetListResponse;
 import toy.tweet.dto.response.TweetResponseDto;
 import toy.tweet.service.TweetService;
 
+import javax.xml.stream.Location;
+import java.net.URI;
+
 @RestController
 @RequestMapping("/tweets")
 @RequiredArgsConstructor
 public class TweetController {
 
     private final TweetService tweetService;
+    private URI Location;
 
     // 트윗 생성
     @PostMapping
-    public ResponseEntity<Void> createTweet(@RequestBody @Valid TweetCreateRequestDto dto){
-        tweetService.createTweet(dto);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<TweetResponseDto> createTweet(@RequestBody @Valid TweetCreateRequestDto dto){
+        TweetResponseDto resdto = tweetService.createTweet(dto);
+        return ResponseEntity.created(Location).body(resdto);
     }
 
     // 트윗 삭제

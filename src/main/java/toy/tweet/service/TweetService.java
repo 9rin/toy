@@ -28,12 +28,13 @@ public class TweetService {
 
     // 트윗 생성
     @Transactional
-    public void createTweet(@Valid TweetCreateRequestDto dto) {
+    public TweetResponseDto createTweet(@Valid TweetCreateRequestDto dto) {
         // userId로 사용자 조회
         User user = userRepository.findByUserId(dto.getUserId())
                 .orElseThrow(()-> new ToyException(ExceptionCode.USER_NOT_FOUND));
         // Tweet
         Tweet tweet = tweetRepository.save(dto.toEntity(user));
+        return TweetResponseDto.from(tweet);
     }
 
 
