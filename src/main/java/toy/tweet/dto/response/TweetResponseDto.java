@@ -21,7 +21,7 @@ public class TweetResponseDto {
     // Build
     public static TweetResponseDto from(Tweet tweet){
         return TweetResponseDto.builder()
-                .userId(tweet.getId())
+                .userId(tweet.getUser().getUserId())
                 .nickname(tweet.getUser().getNickname())
                 .handle(tweet.getUser().getHandle())
                 .content(tweet.getContent())
