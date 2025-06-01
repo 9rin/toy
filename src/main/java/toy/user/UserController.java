@@ -3,14 +3,6 @@ package toy.user;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-@CrossOrigin(
-        origins = {
-                "https://twitter-clone-tawny-phi.vercel.app",
-                "http://localhost:5173"
-        },
-        allowedHeaders = "*",
-        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.OPTIONS}
-)
 
 @RestController
 @RequestMapping("/users")

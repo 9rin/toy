@@ -4,23 +4,11 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import toy.tweet.domain.Tweet;
 import toy.tweet.dto.request.TweetCreateRequestDto;
 import toy.tweet.dto.response.TweetListResponse;
 import toy.tweet.dto.response.TweetResponseDto;
-import toy.tweet.dto.summary.TweetSummary;
 import toy.tweet.service.TweetService;
-import toy.user.UserResponseDto;
 
-import java.util.List;
-@CrossOrigin(
-        origins = {
-                "https://twitter-clone-tawny-phi.vercel.app",
-                "http://localhost:5173"
-        },
-        allowedHeaders = "*",
-        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.OPTIONS}
-)
 @RestController
 @RequestMapping("/tweets")
 @RequiredArgsConstructor
