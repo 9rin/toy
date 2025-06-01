@@ -11,7 +11,8 @@ import java.time.LocalDateTime;
 @Builder
 public class TweetResponseDto {
 
-    // 표시할 것: 닉네임, 핸들, 트윗 내용, 트윗 생성일자
+    // 표시할 것: ID, 닉네임, 핸들, 트윗 내용, 트윗 생성일자
+    private Long userId;
     private String nickname;
     private String handle;
     private String content;
@@ -20,6 +21,7 @@ public class TweetResponseDto {
     // Build
     public static TweetResponseDto from(Tweet tweet){
         return TweetResponseDto.builder()
+                .userId(tweet.getId())
                 .nickname(tweet.getUser().getNickname())
                 .handle(tweet.getUser().getHandle())
                 .content(tweet.getContent())
